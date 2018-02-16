@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  var apiRoot = 'https://serene-sands-19435.herokuapp.com/v1/tasks/';
-  const trelloApiRoot = 'https://serene-sands-19435.herokuapp.com/v1/trello/';
+  var apiRoot = 'http://localhost:8080/v1/tasks/';
+  const trelloApiRoot = 'http://localhost:8080/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 
    function getAllAvailableBoards(callback, callbackArgs) {
-    var requestUrl = trelloApiRoot;
+    var requestUrl = trelloApiRoot + 'boards';
 
     $.ajax({
       url: requestUrl,
@@ -170,7 +170,7 @@ function handleBoardNameSelect(event) {
   }
 
   function handleCardCreationRequest(event) {
-    var requestUrl = trelloApiRoot;
+    var requestUrl = trelloApiRoot + 'cards';
     var $relatedTaskRow = $(event.target).parents('[data-task-id]');
     var relatedTaskId = $relatedTaskRow.attr('data-task-id');
     var relatedTask = availableTasks[relatedTaskId];
