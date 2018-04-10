@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  var apiRoot = 'https://serene-sands-19435.herokuapp.com/v1/tasks/';
-  const trelloApiRoot = 'https://serene-sands-19435.herokuapp.com/v1/trello/';
+  var apiRoot = 'http://51.144.46.62:8080/v1/tasks/';
+  const trelloApiRoot = 'http://51.144.46.62:8080/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
